@@ -1,7 +1,7 @@
 const calculadoraWorspace = document.getElementById('calculadoraAbrir')
 const calculadoraReal = document.getElementById('Calculadora')
-const calculadoraFechar = document.querySelector('.utilidadeItem')
-const calcUtil = document.getElementById('utilidades')
+const calculadoraFechar = document.querySelector('#fechar')
+const calcUtil = document.getElementById('mover')
 let mousePressionado = false
 
 calcUtil.addEventListener('mousedown', function() {
