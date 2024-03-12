@@ -37,14 +37,17 @@ function simbolo(operacao) {
 
     switch (operacao) {
         case '+':
+            
             num1 = parseInt(visor.innerText);
-            console.log(num1)
+            
             visor.innerText = '';
             adicao = true;
             break;
 
         case '-':
-            alert('Trabalho em progresso..')
+            num1 = parseInt(visor.innerText);
+            visor.innerText = '';
+            subtracao = true;
             break;
         case 'X':
             alert('Trabalho em progresso')
@@ -58,19 +61,23 @@ function simbolo(operacao) {
             alert('Trabalho em progresso')
             
     }
-
-    if (adicao) {
-        igual.addEventListener('click', function () {
-            
-            num2 = parseInt(visor.innerText);
-            resultado = num1 + num2;
-            visor.innerText = '';
-            resultadoSpan.innerText = resultado;
-            visor.appendChild(resultadoSpan);
-            num1 = '';
-            num2 = '';
-            adicao = false;
-        });
-
-    }
 }
+
+igual.addEventListener('click', function () {
+
+    num2 = parseInt(visor.innerText)
+    
+    console.log(num1 + ', ' + num2)
+    if(adicao) {
+        resultado = num1 + num2
+    } else if(subtracao){
+        resultado = num1 - num2
+        
+    }
+
+    visor.innerText = ''
+    resultadoSpan.innerText = resultado
+    visor.appendChild(resultadoSpan)
+    num1 = ''
+    subtracao = false;
+});
