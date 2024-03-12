@@ -6,12 +6,10 @@ let mousePressionado = false
 
 calcUtil.addEventListener('mousedown', function() {
     mousePressionado = true
-    console.log(mousePressionado)
 })
 
 calcUtil.addEventListener('mouseup', function() {
     mousePressionado = false
-    console.log(mousePressionado)
 })
 
 calculadoraReal.addEventListener('mousemove', (e) => {

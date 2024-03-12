@@ -30,10 +30,16 @@ operacoes.forEach(function(operacao) {
     })
 }) 
 
+adicao = false
+subtracao = false
+multiplicacao = false
+divisao = false
+mol = false
+let num1, num2, resultado
+
+
 function simbolo(operacao) {
-    var adicao = false;
-    var subtracao = false;
-    var num1, num2, resultado;
+    
 
     switch (operacao) {
         case '+':
@@ -50,15 +56,22 @@ function simbolo(operacao) {
             subtracao = true;
             break;
         case 'X':
-            alert('Trabalho em progresso')
+            num1 = parseInt(visor.innerText);
+            visor.innerText = '';
+            multiplicacao = true;
             break
 
         case '/':
-            alert('Trabalho em progresso');
+            num1 = parseInt(visor.innerText);
+            visor.innerText = '';
+            divisao = true;
             break
 
         case '%':
-            alert('Trabalho em progresso')
+            num1 = parseInt(visor.innerText);
+            visor.innerText = '';
+            mol = true;
+            break;
             
     }
 }
@@ -66,13 +79,29 @@ function simbolo(operacao) {
 igual.addEventListener('click', function () {
 
     num2 = parseInt(visor.innerText)
-    
-    console.log(num1 + ', ' + num2)
-    if(adicao) {
+    if(adicao){
+
         resultado = num1 + num2
+        adicao = false
+
     } else if(subtracao){
+
         resultado = num1 - num2
-        
+        subtracao = false
+
+    } else if(multiplicacao) {
+
+        resultado = num1 * num2
+        multiplicacao = false
+
+    } else if(divisao) {
+
+        resultado = num1 / num2
+        multiplicacao = false
+
+    } else if(mol) {
+        resultado = num1 % num2
+        mol = false
     }
 
     visor.innerText = ''
@@ -80,4 +109,5 @@ igual.addEventListener('click', function () {
     visor.appendChild(resultadoSpan)
     num1 = ''
     subtracao = false;
+
 });
