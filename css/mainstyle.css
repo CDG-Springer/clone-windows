@@ -97,7 +97,6 @@ body{
     display: flex;
     align-items: end;
     justify-content: end;
-    background-color: green;
     width: 100%;
 }
 
@@ -109,8 +108,8 @@ body{
     padding: 0.5rem 1.5rem;
 }
 
-.utilidadeItem:hover{
-    background-color: red;
+#fechar:hover{
+    background-color: rgb(253, 46, 46);
     user-select: none;
 }
 
